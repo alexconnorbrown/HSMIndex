@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Site Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <header id="top-navbar">
+            <div class="nav-controls">
+                <button class="backforward-button" onclick="navigateBackward()"><span class="symbol">􀰌</span></button>
+                <button class="backforward-button" onclick="navigateForward()"><span class="symbol">􀰑</span></button>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-button" onclick="showAddMemberForm()">Add a Member</button>
+            </div>
+        </header>
+        <div id="sidebar">
+        <p class="sidebar-title">
+            <span class="symbol" id="symbol1"></span>
+            <span class="title-text">HSM Global Index</span>
+        </p>
+        <div class="search-container">
+            <button id="search-btn" class="search-btn">􀊫</button>
+            <input type="text" id="search-input" class="search-input" placeholder="Search...">
+        </div>
+        <div class="nav-button" id='addandremove' onclick="showPlaceholder('Add and Remove')"><span class="symbol" id="addplus">􀅼</span>Add and Remove</div>
+
+        <p class="nav-title"><span class="symbol">􀎫</span>Explore by Location</p>
+
+
+        <div class="nav-item">
+          <div class="drop-button" id="nadrop"><span class="symbol">􀙊</span>North America</div>
+        <div class="dropdown-menu">
+          <div class="nav-button" data-next-column="column3"><span class="symbol">􀋉</span>United States</div>
+          <div class="nav-button" data-next-column="column3"><span class="symbol">􀋉</span>Canada</div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="drop-button" id="nadrop"><span class="symbol">􀙊</span>Europe</div>
+        <div class="dropdown-menu">
+          <div class="nav-button"><span class="symbol">􀋉</span>United Kingdom</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Denmark</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Italy</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Belgium</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Slovakia</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+          <div class="nav-button"><span class="symbol">􀋉</span>Netherlands</div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="drop-button" id="nadrop"><span class="symbol">􀙊</span>Asia</div>
+    <div class="dropdown-menu">
+      <div class="nav-button" onclick="openAndScrollTo('uswest')"><span class="symbol">􀋉</span>United States</div>
+      <div class="nav-button" data-next-column="unitedstates"><span class="symbol">􀋉</span>Canada</div>
+    </div>
+  </div>
+  <div class="nav-item">
+    <div class="drop-button" id="nadrop"><span class="symbol">􀙊</span>Africa</div>
+  <div class="dropdown-menu">
+    <div class="nav-button" onclick="openAndScrollTo('uswest')"><span class="symbol">􀋉</span>United States</div>
+    <div class="nav-button" data-next-column="unitedstates"><span class="symbol">􀋉</span>Canada</div>
+  </div>
+</div>
+<div class="nav-item">
+  <div class="drop-button" id="nadrop"><span class="symbol">􀙊</span>Caribbean</div>
+<div class="dropdown-menu">
+  <div class="nav-button" onclick="openAndScrollTo('uswest')"><span class="symbol">􀋉</span>United States</div>
+  <div class="nav-button" data-next-column="unitedstates"><span class="symbol">􀋉</span>Canada</div>
+</div>
+
+
+
+        <div class="divider"></div>
+        <div class="nav-button" onclick="showPlaceholder('Contact Cards')"><span class="symbol">􀏻</span>Contact Cards</div>
+        <div class="nav-button" onclick="showPlaceholder('Complete List')"><span class="symbol">􀼏</span>Complete List</div>
+        <div class="nav-button" onclick="showPlaceholder('By Follower Count')"><span class="symbol">􂃧</span>By Follower Count</div>
+        <div class="nav-button" onclick="showPlaceholder('New Members')"><span class="symbol">􀜕</span>New Members</div>
+        <div class="divider"></div>
+        <p class="nav-title"><span class="symbol">􀝒</span>City Updates</p>
+        <div class="divider"></div>
+        <div class="nav-button" onclick="showPlaceholder('Ideas for HSM')"><span class="symbol">􀛭</span>Ideas for HSM</div>
+        <div class="nav-button" onclick="showPlaceholder('Feedback')"><span class="symbol">􁌶</span>Feedback</div>
+    </div>
+  </div>
+    <div class="column3" id="column3">
+      <div class="filter-section">
+        <!-- Filter/Sorting Buttons -->
+        <button class="filter-btn">Membership Type</button>
+        <button class="filter-btn">Info Status</button>
+        <button class="filter-btn">Show Member Names</button>
+        <!-- Add more filters as needed -->
+    </div>
+    <p class="column-title">United States</p>
+      <div class="region collapsed" id="uswest">
+          <h2 class="region-title"id="uswestdropdown" data-text="uswest"><span class="symbol">􀙊</span>West Coast <span class="city-count"></span></h2>
+          <div class="nav-button" id="salinas" data-info="Salinas, California" data-member-name="John Doe Photography"></div>
+          <div class="nav-button" id="roseville" data-info="Roseville, California"></div>
+          <div class="nav-button" id="Sacramento" data-info="Sacramento, California"></div>
+          <div class="nav-button" id="Boise" data-info="Boise, Idaho"></div>
+          <div class="nav-button" id="Portland" data-info="Portland, Oregon"></div>
+          <div class="nav-button" id="OrangeCounty" data-info="Orange County, California"></div>
+          <div class="nav-button" id="Windsor" data-info="Windsor, Colorado"></div>
+          <div class="nav-button" id="Fort Collins" data-info="Fort Collins, Colorado"></div>
+          <div class="nav-button" id="saltlake" data-info="Salt Lake City, Utah"></div>
+          <button class="extend-list">Candidate Cities...</button>
+          <!-- Add more buttons as needed -->
+      </div>
+      
+      <div class="region collapsed" id="usmid">
+          <h2 class="region-title" id="usmiddropdown" data-next-column="usmid"><span class="symbol">􀙊</span>Midwest<span class="city-count"></span></h2>
+          <div class="nav-button" data-info="St. Louis, Missouri"></div>
+          <div class="nav-button" data-info="Chicago, Illinois"></div>
+          <div class="nav-button" data-info="Minneapolis, Minnesota"></div>
+          <div class="nav-button" data-info="Milwaukee, Wisconsin"></div>
+          <div class="nav-button" data-info="Richmond, Virginia"></div>
+          <div class="nav-button" data-info="Overland Park, Kansas City"></div>
+          <button class="extend-list">Candidate Cities...</button>
+          <!-- Add more buttons as needed -->
+      </div>
+      
+      <div class="region collapsed" id="northeast">
+          <h2 class="region-title"id="usnorthdropdown" ><span class="symbol">􀙊</span>Northeast<span class="city-count"></span></h2>
+          <div class="nav-button" data-info="Medford, New Jersey"></div>
+          <div class="nav-button" data-info="West Chester, Pennsylvania"></div>
+          <div class="nav-button" id="Montpelier" data-info="Montpelier, Vermont"></div>
+          <div class="nav-button" data-info="Portland, Maine"></div>
+          <div class="nav-button" data-info="Brooklyn, New York"></div>
+          <div class="nav-button" data-info="Hartford, Connecticut"></div>
+          <div class="nav-button" data-info="Stamford, Connecticut"></div>
+          <div class="nav-button" data-info="Harlem, New York City"></div>
+          <div class="nav-button" data-info="Radnor, Pennsylvania"></div>
+          <div class="nav-button" data-info="Philadelphia, Pennsylvania"></div>
+          <div class="nav-button" data-info="Cincinnati, Ohio"></div>
+          <div class="nav-button" data-info="Burlington, Vermont"></div>
+          <button class="extend-list">Candidate Cities...</button>
+          <!-- Add more buttons as needed -->
+      </div>
+      
+      <div class="region collapsed" id="southeast">
+          <h2 class="region-title"id="ussouthdropdown"><span class="symbol">􀙊</span>Southeast<span class="city-count"></span></h2>
+          <div class="nav-button" data-info="Dallas, Texas"></div>
+          <div class="nav-button" data-info="San Antonio, Texas"></div>
+          <div class="nav-button" data-info="Boca Raton, Florida"></div>
+          <div class="nav-button" data-info="Delray Beach, Florida"></div>
+          <div class="nav-button" data-info="Fort Myers, Florida"></div>
+          <div class="nav-button" data-info="Altamonte Springs, Florida"></div>
+          <div class="nav-button" data-info="Miami, Florida"></div>
+          <div class="nav-button" data-info="Orlando, Florida"></div>
+          <div class="nav-button" data-info="Jacksonville, Florida"></div>
+          <div class="nav-button" data-info="Greenville, South Carolina"></div>
+          <div class="nav-button" data-info="Spartanburg, South Carolina"></div>
+          <div class="nav-button" data-info="Washington, DC"></div>
+          <div class="nav-button" data-info="Baltimore, Maryland"></div>
+          <div class="nav-button" data-info="Kennesaw, Cobb County, Georgia"></div>
+          <div class="nav-button" data-info="Johns Creek, Atlanta, Georgia"></div>
+          <div class="nav-button" data-info="Louisville, Kentucky"></div>
+          <div class="nav-button" data-info="Oklahoma City, Oklahoma"></div>
+          <div class="nav-button" data-info="Tulsa, Oklahoma"></div>
+          <div class="nav-button" data-info="Houston, Texas"></div>
+           <button class="extend-list">Candidate Cities...</button>
+          <!-- Add more buttons as needed -->
+      </div>      
+    </div>
+</div>
+<div class="main-content">
+  <div class="dashboard-layout">
+        <!-- Header Image and Title -->
+        <div class="grid-item grid-item-header">
+          <h1 id="city-name-header">Select a City</h1>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="grid-item photographer-profile">Photographer Profile</div>
+        <div class="grid-item events-meetups">Events and Meetups</div>
+        <div class="grid-item instagram-hashtags">Instagram Hashtags</div>
+        <div class="grid-item linkedin-hashtags">LinkedIn Hashtags</div>
+        <div class="grid-item photo-schools">Photo Schools</div>
+        <div class="grid-item guest-lectures">Guest Lectures</div>
+        <div class="grid-item key-industries">Key Industries</div>
+
+        <!-- Template Sections -->
+        <div class="grid-item grid-item-template post-templates">Post Templates</div>
+        <div class="grid-item grid-item-template story-templates">Story Templates</div>
+        <div class="grid-item grid-item-template hashtag-collections">Hashtag Collections</div>
+        <div class="grid-item grid-item-template business-card-templates">Business Card Templates</div>
+        <div class="grid-item grid-item-template email-marketing-templates">Email Marketing Templates</div>
+        <div class="grid-item grid-item-template price-list-templates">Price List Templates</div>
+        <div class="grid-item grid-item-template contract-templates">Photography Contract Templates</div>
+        <div class="grid-item grid-item-template invoicing-templates">Invoicing Templates</div>
+        <div class="grid-item grid-item-template partnership-proposals">Partnership Proposal Templates</div>
+        <div class="grid-item grid-item-template event-planning-templates">Meetup and Event Planning Templates</div>
+    </div>
+    
+    
+          
+  
+          <!-- Additional sections following the same pattern -->
+      </div>
+  </div>
+  
+  
+
+<script src="script.js"></script>
